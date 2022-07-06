@@ -1,0 +1,12 @@
+db_name           = "wordpress_db"          // database name
+database_user           = "wordpress_user"        //database username
+shared_credentials_file = ["~/.aws/credentials"]                //Access key and Secret key file location
+region                  = "eu-west-2"        //London
+ami                     = "ami-03c93d6630a8874c9" // Ubuntu focal 20.4 LTS E2 AMI
+AZ1                     = "eu-west-2a"       // Avaibility Zones
+AZ2                     = "eu-west-2b"
+AZ3                     = "eu-west-2c"
+PUBLIC_KEY_PATH         = "./wordpress.pub" // Key name for ec2, make sure it is created before terrafomr apply
+PRIV_KEY_PATH           = "./wordpress"
+instance_type           = "t2.micro" //Instance size
+instance_class          = "db.t2.micro" 
