@@ -55,7 +55,7 @@ As an extra, a CloudWatch alarm is pre-configured to monitor CPU metrics, utiliz
 
  <p>Don't forget to destroy all the resources created by Terraform to avoid any unwanted charges to your AWS account! <code> terraform destroy -var-file="user.tfvars" </code></p>
 
-<h3>Please do get in touch if you have any questions, comments or suggestions for improvement! Maybe you can raise a PR too.</h2>
+<p>Please do get in touch if you have any questions, comments or suggestions for improvement!</p>
 
 
 
