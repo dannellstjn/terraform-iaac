@@ -5,11 +5,11 @@ This Terraform Project creates an RDS Database instance with MySQL 5.7 installed
  <p>
  The resources created using this template are AWS FREE TRIAL friendly</p> 
  
- <h2>Please make sure you change the database entries ,regions and other variables in the terraform.tfvars file as required.
- You'll also need to update the Database password in <code>user.tfvars</code> </h2>
+ <h3>Please make sure you change the database entries ,regions and other variables in the terraform.tfvars file as required.
+ You'll also need to update the Database password in user.tfvars file</h3>
 
 <h3>
-For Information
+Useful information
 </h3>
 
 <p>This script uses the Ubuntu 20.04 LTS focal EC2 AMI (see https://cloud-images.ubuntu.com/locator/ec2/ for details) so please make sure you're in the correct region, and you have the correct ami ids for that region before initalizing Terraform...
