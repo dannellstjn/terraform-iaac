@@ -1,22 +1,19 @@
-<img src= "" />
+<img src= "sonic.png" />
 <h3>
-This terraform projects creates
-RDS databse with mysql 5.7 
- 
-#EC2 instance with wordpress pre installed and configured </h3>
+This Terraform Project creates an RDS Databse running MySQL 5.7 and runs on an EC2 instance with WordPress pre-installed and configured </h3>
  
  <h2>
- AWS FREE TRIAL friendly</h2> 
+ The resources provisioned by this template is AWS FREE TRIAL friendly</h2> 
  
- <h3>Please make sure you make changes to the database entries ,regions and other variables in the terraform.tfvars file
- You will also need to update the  Database password in user.tfvars file </h3>
+ <h3>Please make sure you change the database entries ,regions and other variables in the terraform.tfvars file
+ You will also need to update the  Database password in the user.tfvars file </h3>
 <h3>
-Overview:
+Information
 
-This script uses the Ubuntu 20.04 LTS focal EC2 AMI, (see https://cloud-images.ubuntu.com/locator/ec2/ for more details), please make sure you are in the correct region and you have the ami id for that region.
+This script uses the Ubuntu 20.04 LTS focal EC2 AMI, (see https://cloud-images.ubuntu.com/locator/ec2/ for more details) so please make sure you're in the correct region and you have the ami id for that region before initalizing Terraform..
 
-A recent version of Ansible installed and a correctly configured aws CLI on your local machine. 
-Please note that the playbook_test.yml file uses an ansible script designed for the Ubuntu distribution.
+Ansible should be installed and the aws CLI configured properly on the local machine. 
+Please note the playbook_test.yml file will use an ansible script which has been designed and tested on Ubuntu focal distribution.
 
 </h3>
   --------------------------------------------------------------------------------
@@ -38,7 +35,7 @@ Please note that the playbook_test.yml file uses an ansible script designed for 
 
 <h2> STEPS: </h2>
 
- <p>Clone this repo using this command <code>  git clone my-repot</code></p>
+ <p>Clone this repo using this command <code>  git clone my-rep</code></p>
  <p> Go to the project folder         <code>  cd terraform-ansible-wordpress </code></p>
  <p>Initialize terraform          <code>  terraform init</code></p>
  <p>Change the database and aws settings in terraform.tfvars file </p>
