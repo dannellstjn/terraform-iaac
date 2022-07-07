@@ -51,11 +51,11 @@ As an extra, a CloudWatch alarm is pre-configured to monitor CPU metrics, utiliz
  
  <p> After successfull provisioning of AWS Resources (using the remote-exec provisioner) and your private key, an EC2 instance will have the capability to establish a connection to the host using SSH. The Ubuntu package manager will be updated, and Python will be installed. This will allow the local ansible server to connect to a provisoned EC2 Instance. After the Installation is completed (using a local exec provisioner) the Ansible playbook will be run against the instance and output the RDS endpoint and an Elastic (static) IP address </p>
 
- <h3> Everything is Automated. This template will help to stand up a development WordPress site in preparation for a production ready environment. It will build and start the Webserver using an Ansible playbook script </h3>
+ <p> Everything is Automated. This template will help to stand up a functional development site running the WordPress application, and prep for a production ready environment, it  will build components needed  and start the Webserver using a playbook script </h3>
 
- <p>Lastly, please remember to destroy all the resources by Terraform to avoid additional charges to your AWS account! <code> terraform destroy -var-file="user.tfvars" </code></p>
+ <p>Don't forget to destroy all the resources created by Terraform to avoid any unwanted charges to your AWS account! <code> terraform destroy -var-file="user.tfvars" </code></p>
 
-<h3>Thank you for reading and Happy scripting. Please get in touch if you have any questions about this project or want to raise a PR!</h3>
+<h3>Please do get in touch if you have any questions, comments or suggestions for improvement! Maybe you can raise a PR too.</h2>
 
 
 
