@@ -1,41 +1,42 @@
 <img src= "sonic.png" />
-<h3>
-This Terraform Project creates an RDS Databse running MySQL 5.7 and runs on an EC2 instance with WordPress pre-installed and configured </h3>
+<p>
+This Terraform Project creates an RDS Database instance with MySQL 5.7 installed and runing on an EC2 instance with the latest WordPress version pre-installed and configured!</h3>
  
  <p>
- The resources provisioned by this template is AWS FREE TRIAL friendly</p> 
+ The resources created using this template are AWS FREE TRIAL friendly</p> 
  
- <h3>Please make sure you change the database entries ,regions and other variables in the terraform.tfvars file
- You will also need to update the  Database password in the user.tfvars file </h3>
+ <h2>Please make sure you change the database entries ,regions and other variables in the terraform.tfvars file as required.
+ You'll also need to update the Database password in <code>user.tfvars</code> </h2>
+
 <h3>
-Information
+For Information
 </h3>
 
-<p>This script uses the Ubuntu 20.04 LTS focal EC2 AMI, (see https://cloud-images.ubuntu.com/locator/ec2/ for more details) so please make sure you're in the correct region and you have the ami id for that region before initalizing Terraform..
+<p>This script uses the Ubuntu 20.04 LTS focal EC2 AMI (see https://cloud-images.ubuntu.com/locator/ec2/ for details) so please make sure you're in the correct region, and you have the correct ami ids for that region before initalizing Terraform...
 
-Ansible should be installed and the aws CLI configured properly on the local machine. 
-Please note the playbook_test.yml file will use an ansible script which has been designed and tested on Ubuntu focal distribution.
+Ansible should be installed and the aws CLI configured correctly on your local machine. 
+Keep in mind the playbook_test.yml is the ansible script designed and tested using the Ubuntu focal distribution. You can change this for your own playbook scripts once you have a PoC running.
 
 </p>
   --------------------------------------------------------------------------------
- <h3> Security: </h3>
+ <h3> Security Info: </h3>
 <p> An EC2 will be launched in a public subnet and RDS backend database will be launched across two private subnets </p>
 <p> Only an EC2 with a defined security group can access the RDS instance and the RDS instance will not have have internet access </p>
 <p> The other native AWS applications will be setup as part of the initial infrastructure build.
 <p> A load balancer will sit in front of the application and accept requests via port 80 and will be mapped to the host port</p> 
 
-<p>Some of the native applications installed will be AWS Security Groups, VPCs, routing tables, and an Elastic Loadbalancer attached to a Autoscaling Group with an ASG policy. 
+<p>Some of the AWS resources provisioned will be AWS Security Groups, VPCs, routing tables, plus an Elastic Loadbalancer, attached to a Autoscaling Group with an ASG policy. 
 
-As an extra, a CloudWatch alarm is pre-configured to monitor CPU metrics, utilization and behaviour. An event will trigger if certain conditions are met such and there is a problem with the EC2 node</p>
+For completion,  a CloudWatch alarm is pre-configured to monitor CPU metrics, utilization and behaviour. This means an event will be triggered if thresholds are breached or there is a problem affecting the node or underlying hardware</p>
 
 
 <-------------------------------------------------------------------------------->
 
-<h2> Prerequisite </h2>
-<p> Before launching this Terraform template, the aws cli should be installed and configured with the correct access and secret keys </p>
+<h2> Some Prerequisites </h2>
+<p> Before launching Terraform, the aws cli should be installed and configured with the correct access and secret keys </p>
 <p> Terraform should be correctly installed and configured to run on your device or machine </p>
-<p> Ansible should be installed and configured.
-<p> You should  configure the AWS CLI using <code> aws configure </code> if you haven't already done so </p>
+<p> Ansible should be installed, configured and ready to use.
+<p> You can configure the AWS CLI using <code> aws configure </code> if you haven't already done so </p>
 
 <-------------------------------------------------------------------------------->
 
@@ -49,13 +50,13 @@ As an extra, a CloudWatch alarm is pre-configured to monitor CPU metrics, utiliz
  <p>View the Plan               <code> terraform plan -var-file="user.tfvars"  </code></p>
  <p>Apply changes to the plan once you are happy everything is in order           <code> terraform apply -var-file="user.tfvars" </code></p>
  
- <p> After successfull provisioning of AWS Resources (using the remote-exec provisioner) and your private key, an EC2 instance will have the capability to establish a connection to the host using SSH. The Ubuntu package manager will be updated, and Python will be installed. This will allow the local ansible server to connect to a provisoned EC2 Instance. After the Installation is completed (using a local exec provisioner) the Ansible playbook will be run against the instance and output the RDS endpoint and an Elastic (static) IP address </p>
+ <p> After successfull provisioning of the AWS Resources (using the remote-exec provisioner) and your private key, an EC2 instance will have the capability to establish a connection to the host using SSH. Then the Ubuntu (OS) package manager will be updated, and Python will be installed. This will allow the local ansible server to connect to a provisoned EC2 Instance. After the Install is completed (using a local exec provisioner) the Ansible playbook will be run against the instance, and if there aren't any errors, it will output including the RDS endpoint and the Elastic (static) IP address. The Load balancer will make it easier to upgrade to an SSL/TLS connection if you want to encrypt traffic and keep the site safe! </p>
 
- <p> Everything is Automated. This template will help to stand up a functional development site running the WordPress application, and prep for a production ready environment, it  will build components needed  and start the Webserver using a playbook script </h3>
+ <p> Everything is Automated so this template will help to stand up a functional development site running the WordPress application in preparation for a production ready environment, it will build the resources needed for your web application and start the Webserver using a playbook script </p>
 
- <p>Don't forget to destroy all the resources created by Terraform to avoid any unwanted charges to your AWS account! <code> terraform destroy -var-file="user.tfvars" </code></p>
+ <p>Don't forget to destroy all resources created by Terraform and setup a billing alarm! This will help to avoid any unwanted charges to your AWS account! <code> terraform destroy -var-file="user.tfvars" </code></p>
 
-<p>Please do get in touch if you have any questions, comments or suggestions for improvement!</p>
+<p>Please reach out if you have any questions, comments or suggestions for improvement!</p>
 
 
 
