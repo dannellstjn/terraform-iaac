@@ -3,10 +3,11 @@
 This Terraform Project creates an RDS Database instance with MySQL 5.7 installed and runing on an EC2 instance with the latest WordPress version pre-installed and configured!</h3>
  
  <p>
- The resources created using this template are AWS FREE TRIAL friendly</p> 
+ The resources created using this template are AWS FREE TRIAL friendly!</p> 
  
- <h3>Please make sure you change the database entries ,regions and other variables in the terraform.tfvars file as required.
- You'll also need to update the Database password in user.tfvars file</h3>
+<h3>Before you start</h3>
+ <p>Make sure the database entries ,regions and other important variables have been updated, specifically in terraform.tfvars as required.
+ You'll also need to update the Database password in the user.tfvars file.</p>
 
 <h3>
 Useful information
