@@ -8,7 +8,7 @@ This Terraform Project creates an RDS Database instance with MySQL 5.7 installed
  The resources created using this template are AWS FREE TRIAL friendly!</p> 
  
 <h3>Before you start</h3>
- <p>Make sure the database entries ,regions and other important variables have been changed in terraform.tfvars as required.
+ <p>Make sure  database entries ,regions and other important variables have been changed in terraform.tfvars as required.
  You'll also need to update the Database password information in the user.tfvars file.</p>
 
 <h3>
@@ -22,7 +22,7 @@ Keep in mind the playbook_test.yml is the ansible script designed and tested usi
 
 </p>
   --------------------------------------------------------------------------------
- <h3> Security Info: </h3>
+ <h3> Security stuff </h3>
 <p> An EC2 will be launched in a public subnet and RDS backend database will be launched across two private subnets </p>
 <p> Only an EC2 with a defined security group can access the RDS instance and the RDS instance will not have have internet access </p>
 <p> The other native AWS applications will be setup as part of the initial infrastructure build.
@@ -43,7 +43,7 @@ For completion,  a CloudWatch alarm is pre-configured to monitor CPU metrics, ut
 
 <-------------------------------------------------------------------------------->
 
-<h2> Quick start steps: </h2>
+<h2>A quick start guide: </h2>
 
  <p>Clone this repo using this command <code>  git clone https://github.com/dannellstjn/terraform-iaac.git</code></p>
  <p> Go to the project folder         <code>  cd terraform-iaac </code></p>
