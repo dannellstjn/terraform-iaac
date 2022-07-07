@@ -21,10 +21,12 @@ Please note the playbook_test.yml file will use an ansible script which has been
  <h3> Security: </h3>
 <p> An EC2 will be launched in a public subnet and RDS backend database will be launched across two private subnets </p>
 <p> Only an EC2 with a defined security group can access the RDS instance and the RDS instance will not have have internet access </p>
-<p> Other native AWS applications will be provisioned, as part of the base build. These include Security Groups, VPCs, attached routing tables, Elastic Loadbalancer, attached to an Autoscaling Group & Autoscaling group pPolicy, with an additional CloudWatch metrics alarm to monitor CPU utilization and behaviour.
+<p> The other native AWS applications will be setup as part of the initial infrastructure build. 
+
+This includes the standard Security Groups, VPCs, routing tables, an Elastic Loadbalance attached to a Autoscaling Group with an ASG policy. As a bonus, I have added CloudWatch metrics alarm to monitor CPU utilization and behaviou, the alarm will trigger if certain conditions are met</p>
 
 
-<----------------------------------------------------------------------------------------------------------------------->
+<-------------------------------------------------------------------------------->
 
 <h2> Prerequisite </h2>
 <p> Before launching this Terraform template, the aws cli should be installed and configured with the correct access and secret keys </p>
@@ -32,7 +34,7 @@ Please note the playbook_test.yml file will use an ansible script which has been
 <p> Ansible should be installed on your local machine.
 <p> You can configure the AWS CLI using <code> aws configure </code> if you haven't already done so </p>
 
-<------------------------------------------------------------------------------------------------------------------------>
+<-------------------------------------------------------------------------------->
 
 <h2> STEPS: </h2>
 
@@ -44,13 +46,13 @@ Please note the playbook_test.yml file will use an ansible script which has been
  <p>View Plan using                <code> terraform plan -var-file="user.tfvars"  </code></p>
  <p>Apply the plan using           <code> terraform apply -var-file="user.tfvars" </code></p>
  
- <p> After successfull provisioning of AWS Resources, using the remote-exec provisioner and your private key, an EC2 instance will be connected via  SSH. The apt package manager will be updated and Python will be installed, this will enable the local ansible server to connect to the provisoned EC2 Instance. Once the Installation is completed using the local exec provisioner, the Ansible playbook will be run against provisioned EC2 </p>
+ <p> After successfull provisioning of AWS Resources (using the Terraform remote-exec provisioner) and your private key, an EC2 instance will be have the capability to connect using SSH. The Ubuntu apt package manager will then be updated, Python will be installed, this will allow the local ansible server to connect to a provisoned EC2 Instance. When the Installation is completes (using a local exec provisioner) the Ansible playbook will be run against the provisioned instance </p>
 
- <h3> Everything is Automated. This template will provision all the required aws resources, it will also build and start a webserver using Ansible </h3>
+ <h3> Everything is Automated. This template will help to setup all the resources needed to stand up a WordPress site. It  will also create  and start the Webserver using Ansible playbook script </h3>
 
- <p>Please remember to destroy your Infrastructure to avoid charges outside of the Free Tier   <code> terraform destroy -var-file="user.tfvars" </code></p>
+ <p>Finally, please remember to destroy all resources created to avoid any additional charges to your AWS account  <code> terraform destroy -var-file="user.tfvars" </code></p>
 
-
+<h3>Happy, scripting!</h3>
 
 
 
