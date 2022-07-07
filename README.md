@@ -1,4 +1,6 @@
 <img src= "sonic.png" />
+
+<h2>IaaC using Terraform and friends</h2>
 <p>
 This Terraform Project creates an RDS Database instance with MySQL 5.7 installed and runing on an EC2 instance with the latest WordPress version pre-installed and configured!</h3>
  
@@ -6,11 +8,11 @@ This Terraform Project creates an RDS Database instance with MySQL 5.7 installed
  The resources created using this template are AWS FREE TRIAL friendly!</p> 
  
 <h3>Before you start</h3>
- <p>Make sure the database entries ,regions and other important variables have been updated, specifically in terraform.tfvars as required.
- You'll also need to update the Database password in the user.tfvars file.</p>
+ <p>Make sure the database entries ,regions and other important variables have been changed in terraform.tfvars as required.
+ You'll also need to update the Database password information in the user.tfvars file.</p>
 
 <h3>
-Useful information
+Some useful information
 </h3>
 
 <p>This script uses the Ubuntu 20.04 LTS focal EC2 AMI (see https://cloud-images.ubuntu.com/locator/ec2/ for details) so please make sure you're in the correct region, and you have the correct ami ids for that region before initalizing Terraform...
