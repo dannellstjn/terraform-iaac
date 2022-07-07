@@ -53,11 +53,15 @@ For completion,  a CloudWatch alarm is pre-configured to monitor CPU metrics, ut
  <p>View the Plan               <code> terraform plan -var-file="user.tfvars"  </code></p>
  <p>Apply changes to the plan once you are happy everything is in order           <code> terraform apply -var-file="user.tfvars" </code></p>
  
- <p> After successfull provisioning of the AWS Resources (using the remote-exec provisioner) and your private key, an EC2 instance will have the capability to establish a connection to the host using SSH. Then the Ubuntu (OS) package manager will be updated, and Python will be installed. This will allow the local ansible server to connect to a provisoned EC2 Instance. After the Install is completed (using a local exec provisioner) the Ansible playbook will be run against the instance, and if there aren't any errors, it will output including the RDS endpoint and the Elastic (static) IP address. The Load balancer will make it easier to upgrade to an SSL/TLS connection if you want to encrypt traffic and keep the site safe! </p>
+ <p> After successfull provisioning of the AWS Resources (using the remote-exec provisioner) and your private key, an EC2 instance will establish a connection to the host via SSH. 
 
- <p> Everything is Automated so this template will help to stand up a functional development site running the WordPress application in preparation for a production ready environment, it will build the resources needed for your web application and start the Webserver using a playbook script </p>
+<p>The local package manager will be updated, and Python will be installed. This will enable the local ansible server to connect to a provisioned EC2 instance.</p>
+<p>After the Install is completed (using a local exec provisioner) the Ansible playbook will be run against the instance, and if there aren't any errors, it will output some data including the RDS endpoint and a Elastic (static) IP address. </p>
+<p>A Load balancer has been added to the setup, this will make it easier when upgrading to a more secure option, using SSL/TLS protocol if you want to keep the site more secure during development stages!</p>
 
- <p>Don't forget to destroy all resources created by Terraform and setup a billing alarm! This will help to avoid any unwanted charges to your AWS account! <code> terraform destroy -var-file="user.tfvars" </code></p>
+ <p> Remember everything is automatic, this template acts as a guide to help stand up a basic development website running the latest WordPress application preparing you for a pre-production ready environment, it will build the necessary resources required for a simple web application and then start the Webserver using the playbook script.</p>
+
+ <p>Don't forget to destroy all resources created by Terraform. I would also recommend setting up a billing alert so you don't get caught out! This of course will help to avoid any unwanted charges to your AWS account! <code> terraform destroy -var-file="user.tfvars" </code></p>
 
 <p>Please reach out if you have any questions, comments or suggestions for improvement!</p>
 
